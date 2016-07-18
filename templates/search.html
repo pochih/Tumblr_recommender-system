@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Am I God</title>
+	</head>
+	<body>
+		<a href="/"><h5>back</h5></a>
+		<h3>Search result for {{ blogName }} </h3>
+		<fieldset>
+			<legend>VSM Results</legend>
+			{% if vsmResult %}
+			<ul>
+				{% for blog in vsmResult %}
+				<li><a href="http://{{ blog[0] }}.tumblr.com/" target="_blank">{{ blog[0] }}</a> ({{ blog[1] }})</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<h5>No Results</h5>
+			{% endif %}
+		</fieldset>
+		<fieldset>
+			<legend>LM Results</legend>
+			{% if lmResult %}
+			<ul>
+				{% for blog in lmResult %}
+				<li><a href="http://{{ blog[0] }}.tumblr.com/" target="_blank">{{ blog[0] }}</a> ({{ blog[1] }})</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<h5>No Results</h5>
+			{% endif %}
+		</fieldset>
+		<fieldset>
+			<legend>Word2Vec Results</legend>
+			{% if w2vResult %}
+			<ul>
+				{% for blog in w2vResult %}
+				<li><a href="http://{{ blog[0] }}.tumblr.com/" target="_blank">{{ blog[0] }}</a> ({{ blog[1] }})</li>
+				{% endfor %}
+			</ul>
+			{% else %}
+			<h5>No Results</h5>
+			{% endif %}
+		</fieldset>
+	</body>
+</html>
